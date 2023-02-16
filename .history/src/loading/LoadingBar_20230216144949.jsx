@@ -11,15 +11,18 @@ const LoadingBar = () => {
     };
   }, []);
   return (
-    <div className="flex items-center justify-center h-screen">
+    <>
       <LinearProgress
         value={level}
         color="primary"
         sx={{
-          width: "200px",
+          display: "flex",
+          height: "100vh",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       ></LinearProgress>
-    </div>
+    </>
   );
 };
 

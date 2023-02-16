@@ -11,7 +11,7 @@ const LoadingBar = () => {
     };
   }, []);
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center max-h-screen">
       <LinearProgress
         value={level}
         color="primary"

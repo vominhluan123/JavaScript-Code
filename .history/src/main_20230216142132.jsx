@@ -4,7 +4,6 @@ import App from "./App";
 import "./index.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import LoadingBar from "./loading/LoadingBar";
 const Main = lazy(() => import("./components/layout/Main"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const MovieDetailsPage = lazy(() => import("./pages/MovieDetailsPage"));
@@ -38,7 +37,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <Suspense fallback={<LoadingBar></LoadingBar>}>
+      <Suspense>
         <RouterProvider router={router}>
           <App />
         </RouterProvider>

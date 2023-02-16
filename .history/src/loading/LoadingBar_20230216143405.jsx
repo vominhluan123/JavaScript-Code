@@ -1,4 +1,4 @@
-import { LinearProgress, Paper } from "@mui/material";
+import { LinearProgress, Toolbar } from "@mui/material";
 import React, { useEffect, useState } from "react";
 const LoadingBar = () => {
   const [level, setLever] = useState(0);
@@ -11,15 +11,11 @@ const LoadingBar = () => {
     };
   }, []);
   return (
-    <div className="flex items-center justify-center h-screen">
-      <LinearProgress
-        value={level}
-        color="primary"
-        sx={{
-          width: "200px",
-        }}
-      ></LinearProgress>
-    </div>
+    <Toolbar>
+      <div className="fixed z-[999] pointer-events-none transition-all page-container">
+        <LinearProgress value={level} color="primary" className="w-full" />
+      </div>
+    </Toolbar>
   );
 };
 
